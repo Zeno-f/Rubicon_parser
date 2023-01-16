@@ -1,28 +1,24 @@
+"""
+This file houses the functions to parse paradox text files.
+
+Public function that should be called is parse_text_file()
+    Args: string containing path
+    Returns: nested dictionary
+"""
 import re
 
 
-def open_files(location):
-    # same function in culture group shader -> jomini_io
-    # todo file reading error catching
-
-    # open files with encoding = 'utf-8-sig' to remove leading BOM symbols
-    with open(location, encoding='utf-8-sig') as file:
-        data = file.readlines()
-
-    return data
-
-
-def read_file_as_string(location):
+def _read_file_as_string(location):
     with open(location, encoding='utf-8-sig') as file:
         data = file.read()
 
     return data
 
 
-def parse_pop(data_stack):
+def _parse_pop(data_stack):
     """Pops the top of the data stack and determines what to do with it
 
-    :returns
+    Returns
         popped: the popped data string paired with a keyword
         """
     popped = data_stack.pop(0)
@@ -49,15 +45,15 @@ def parse_pop(data_stack):
         return popped, 'down'
 
     if re.match('=', popped):
-        return parse_pop(data_stack)
+        return _parse_pop(data_stack)
 
     if re.match(',', popped):
-        return parse_pop(data_stack)
+        return _parse_pop(data_stack)
 
     # print(popped)
 
 
-def parse_data(data_stack):
+def _parse_data(data_stack):
     """Loops through all the items on the datastack and builds a dictionary
 
     Create an empty dictionary and list of values
@@ -81,7 +77,7 @@ def parse_data(data_stack):
     list_of_values = []
 
     while len(data_stack) != 1:
-        popped, action = parse_pop(data_stack)
+        popped, action = _parse_pop(data_stack)
 
         if 'down' in action:
             if 'last_key' in locals() and len(list_of_values) == 1:
@@ -113,7 +109,7 @@ def parse_data(data_stack):
             last_key = popped
 
         if 'up' in action:
-            up_dict = parse_data(data_stack)
+            up_dict = _parse_data(data_stack)
             if 'last_key' in locals():
                 if last_key in data_dict:
                     """Key already exists in this dictionary """
@@ -134,8 +130,19 @@ def parse_data(data_stack):
 
 
 def parse_text_file(file_path):
+    """Parses file and returns dictionary
 
-    ds = read_file_as_string(file_path)
+    This function reads file in the provided path and formats it into a flat
+    list that is then passed to the main data parsing function that loops
+    through the list and creates a nested dictionary.
+
+    Arg:
+        file_path: string containing the path of file that has to be parsed
+    Returns:
+        Nested dictionary containing all information from the parsed file
+    """
+
+    ds = _read_file_as_string(file_path)
 
     ds = re.sub(r'(#.*)', '', ds)    # remove comment
     ds = re.sub(r'\b\s\b', ',', ds)  # newlines and whitespaces to list items
@@ -148,7 +155,7 @@ def parse_text_file(file_path):
     ds[:] = [x for x in ds if x]         # remove whitespace
     ds[:] = [x for x in ds if x != '\n']  # remove newlines
 
-    dictionary_from_file = parse_data(data_stack=ds)
+    dictionary_from_file = _parse_data(data_stack=ds)
 
     return dictionary_from_file
 
