@@ -1,0 +1,156 @@
+import re
+
+
+def open_files(location):
+    # same function in culture group shader -> jomini_io
+    # todo file reading error catching
+
+    # open files with encoding = 'utf-8-sig' to remove leading BOM symbols
+    with open(location, encoding='utf-8-sig') as file:
+        data = file.readlines()
+
+    return data
+
+
+def read_file_as_string(location):
+    with open(location, encoding='utf-8-sig') as file:
+        data = file.read()
+
+    return data
+
+
+def parse_pop(data_stack):
+    """Pops the top of the data stack and determines what to do with it
+
+    :returns
+        popped: the popped data string paired with a keyword
+        """
+    popped = data_stack.pop(0)
+    next_pop = data_stack[0]
+
+    if re.match(r'-*\w+', popped):
+
+        if re.match(r'=', next_pop):
+            return popped, 'key'
+
+        if re.match(r'\w+', next_pop):
+            return popped, 'value'
+
+        if re.match(r',', next_pop):
+            return popped, 'value'
+
+        if re.match(r'}', next_pop):
+            return popped, 'value'
+
+    if re.match(r'{', popped):
+        return popped, 'up'
+
+    if re.match(r'}', popped):
+        return popped, 'down'
+
+    if re.match('=', popped):
+        return parse_pop(data_stack)
+
+    if re.match(',', popped):
+        return parse_pop(data_stack)
+
+    # print(popped)
+
+
+def parse_data(data_stack):
+    """Loops through all the items on the datastack and builds a dictionary
+
+    Create an empty dictionary and list of values
+    Then start a loop through the data stack till it is empty. The top item is
+    taken off and assigned an action.
+    DOWN:
+        Check if there are values left to add to the dictionary and return
+        the current dictionary or list to the lower layer.
+    VALUE:
+        Add the value to the list of values.
+    KEY:
+        Add the last unique key value pair to the dictionary, remove the added
+        value's from the list and store the new key.
+    UP:
+        Run this function and store the received data. Update the dictionary
+        with this data. Contains a check to see if the key already exists and
+        if it does it create a list for all values that belong to that key.
+
+    """
+    data_dict = {}
+    list_of_values = []
+
+    while len(data_stack) != 1:
+        popped, action = parse_pop(data_stack)
+
+        if 'down' in action:
+            if 'last_key' in locals() and len(list_of_values) == 1:
+                data_dict.update({last_key: list_of_values.pop()})
+            if 'last_key' in locals() and len(list_of_values) > 1:
+                data_dict.update({last_key: []})
+                for i in list_of_values:
+                    data_dict[last_key].append(i)
+                list_of_values.clear()
+            if 'last_key' not in locals() and len(list_of_values) > 0:
+                return list_of_values
+
+            return data_dict
+
+        if 'value' in action:
+            list_of_values.append(popped)
+
+        if 'key' in action:
+            if 'last_key' in locals():
+                if popped != last_key:
+                    if len(list_of_values) == 1:
+                        data_dict.update({last_key: list_of_values.pop()})
+                    if len(list_of_values) > 1:
+                        data_dict.update({last_key: []})
+                        for i in list_of_values:
+                            data_dict[last_key].append(i)
+                        list_of_values.clear()
+
+            last_key = popped
+
+        if 'up' in action:
+            up_dict = parse_data(data_stack)
+            if 'last_key' in locals():
+                if last_key in data_dict:
+                    """Key already exists in this dictionary """
+                    if isinstance(data_dict[last_key], list):
+                        data_dict[last_key].append(up_dict)
+                    else:
+                        new_list = [data_dict[last_key], up_dict]
+                        data_dict.update({last_key: new_list})
+                else:
+                    """Key is unique for this dictionary"""
+                    data_dict.update({last_key: up_dict})
+            else:
+                """Dictionary does not have a key, and it might be a list 
+                instead of a dictionary"""
+                data_dict = up_dict
+
+    return data_dict
+
+
+def parse_text_file(file_path):
+
+    ds = read_file_as_string(file_path)
+
+    ds = re.sub(r'(#.*)', '', ds)    # remove comment
+    ds = re.sub(r'\b\s\b', ',', ds)  # newlines and whitespaces to list items
+    ds = re.sub(r'(})\s+({)', ',', ds)  # remove redundant dictionary
+    ds = re.sub(r'\t', '', ds)        # flatten by removing tabs
+    ds = re.sub(r'(\n)*', r'\1', ds)  # remove empty lines
+    ds = re.sub(r' ', '', ds)          # remove meaningless whitespace
+    ds = re.sub(r'"', '', ds)
+    ds = re.split(r'(\n|{|}|,|=)', ds)  # split
+    ds[:] = [x for x in ds if x]         # remove whitespace
+    ds[:] = [x for x in ds if x != '\n']  # remove newlines
+
+    dictionary_from_file = parse_data(data_stack=ds)
+
+    return dictionary_from_file
+
+
+dicts = parse_text_file('D:\Games\SteamLibrary\steamapps\common\ImperatorRome\game\setup\main\\00_default.txt')
