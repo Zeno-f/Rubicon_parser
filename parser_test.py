@@ -5,14 +5,31 @@ import concurrent.futures
 import json
 import os
 
+"""This test the reach of the parser
+
+adjust root dir to point to the root of the files you want to parse
+    WARNING: ..\Victoria 3\game\gfx\map\map_object_data\generated 
+            contains very big text files
+adjust dump dir to point to the directory where all created dictionaries can 
+be dumped
+
+
+
+"""
 
 root_dir = 'D:\\Games\\SteamLibrary\\steamapps\\common\\Victoria 3\\game\\common\\'
 dump_dir = 'D:\\Games\\Modding\\Rubicon Project\\ParserDump\\'
+
 txt_file_list = glob.glob('**/*.txt',
                           root_dir=root_dir,
                           recursive=True)
 
 errors = []
+
+
+def write_errors():
+    with open((dump_dir + 'errors.txt'), 'w') as out_file:
+        out_file.write('\n'.join(str(line) for line in errors))
 
 
 def create_dummies():
@@ -59,5 +76,7 @@ if __name__ == '__main__':
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
         executor.map(parse_victoria3_test, txt_file_list)
+
+    write_errors()
 
     print('done')
