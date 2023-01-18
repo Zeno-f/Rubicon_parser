@@ -18,6 +18,12 @@ See unsupported files.txt for all files in ..\Victoria 3\game\common\ that don't
 
 Other files may be improperly parsed without causing errors. Please check if the function returns a proper dictionary.
 
+## Other errors
+
+There are other issues that pop-up because the parser was designed around a specific file.
+
+For these limitations check the Issues.
+
 ## Future
 
 If this method of parsing seems to be feasable I would like to improve the parsing logic so it won't break on the files in the unsupported files list.
