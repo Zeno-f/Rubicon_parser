@@ -1,86 +1,155 @@
-D:\Games\Modding\Rubicon Project\ParserDump\character_templates\historical_commanders_africa.txt
-D:\Games\Modding\Rubicon Project\ParserDump\coat_of_arms\coat_of_arms\01_subs.txt
-D:\Games\Modding\Rubicon Project\ParserDump\coat_of_arms\coat_of_arms\02_countries_usa.txt
-D:\Games\Modding\Rubicon Project\ParserDump\coat_of_arms\coat_of_arms\03_random_communist.txt
-D:\Games\Modding\Rubicon Project\ParserDump\coat_of_arms\coat_of_arms\03_random_fascist.txt
-D:\Games\Modding\Rubicon Project\ParserDump\coat_of_arms\coat_of_arms\03_random.txt
-D:\Games\Modding\Rubicon Project\ParserDump\coat_of_arms\coat_of_arms\02_countries.txt
-D:\Games\Modding\Rubicon Project\ParserDump\country_definitions\00_countries.txt
-D:\Games\Modding\Rubicon Project\ParserDump\cultures\00_additional_cultures.txt
-D:\Games\Modding\Rubicon Project\ParserDump\coat_of_arms\coat_of_arms\01_subs_usa.txt
-D:\Games\Modding\Rubicon Project\ParserDump\decisions\000_decisions_help.txt
-D:\Games\Modding\Rubicon Project\ParserDump\defines\00_graphics.txt
-D:\Games\Modding\Rubicon Project\ParserDump\cultures\00_cultures.txt
-D:\Games\Modding\Rubicon Project\ParserDump\defines\00_defines.txt
-D:\Games\Modding\Rubicon Project\ParserDump\dna_data\00_dna.txt
-D:\Games\Modding\Rubicon Project\ParserDump\effect_localization\00_strategic_region_effects_loc.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\00_ethnicities_templates.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_default_morphs.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_east_african.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_north_caucasian.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_native_american.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_central_african.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_circumpolar.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_polynesian.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_african.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_arab.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_indian.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_asian.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_slavic.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_central_asian.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_neutral.txt
-D:\Games\Modding\Rubicon Project\ParserDump\flag_definitions\01_flag_definitions_usa.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_south_east_asian.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_south_american.txt
-D:\Games\Modding\Rubicon Project\ParserDump\flag_definitions\00_flag_definitions.txt
-D:\Games\Modding\Rubicon Project\ParserDump\ethnicities\01_ethnicities_debug.txt
-D:\Games\Modding\Rubicon Project\ParserDump\genes\01_genes_morph.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_armed_forces.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_intelligentsia.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_industrialists.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_rural_folk.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_landowners.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_devout.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_petty_bourgeoisie.txt
-D:\Games\Modding\Rubicon Project\ParserDump\interest_groups\00_trade_unions.txt
-D:\Games\Modding\Rubicon Project\ParserDump\journal_entries\00_player_objectives_economic_dominance.txt
-D:\Games\Modding\Rubicon Project\ParserDump\named_colors\00_coa_colors.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\agrarian_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\on_actions\00_code_on_actions.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\anarchist_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\religious_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\conservative_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\fascist_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\communist_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\named_colors\00_country_colors.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\free_trade_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\aristocrats.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\capitalists.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\engineers.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\social_democrats_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\clerks.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\officers.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\soldiers.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\liberal_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\peasants.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\bureaucrats.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\radical_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\slaves.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\farmers.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\academics.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\shopkeepers.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\machinists.txt
-D:\Games\Modding\Rubicon Project\ParserDump\parties\military_party.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\laborers.txt
-D:\Games\Modding\Rubicon Project\ParserDump\pop_types\clergymen.txt
-D:\Games\Modding\Rubicon Project\ParserDump\scripted_effects\00_rufus_scripted_effects.txt
-D:\Games\Modding\Rubicon Project\ParserDump\scripted_effects\00_scripted_effects.txt
-D:\Games\Modding\Rubicon Project\ParserDump\scripted_guis\dummy.txt
-D:\Games\Modding\Rubicon Project\ParserDump\script_values\building_values.txt
-D:\Games\Modding\Rubicon Project\ParserDump\scripted_lists\dummy.txt
-D:\Games\Modding\Rubicon Project\ParserDump\script_values\game_values.txt
-D:\Games\Modding\Rubicon Project\ParserDump\terrain\01_terrain.txt
-D:\Games\Modding\Rubicon Project\ParserDump\tutorial_lessons\00_tutorial_lessons_establish_trade_route.txt
-D:\Games\Modding\Rubicon Project\ParserDump\tutorial_lessons\00_tutorial_lessons_buildings.txt
-D:\Games\Modding\Rubicon Project\ParserDump\tutorial_lessons\00_tutorial_lessons_institution_by_law.txt
-D:\Games\Modding\Rubicon Project\ParserDump\tutorial_lesson_chains\00_tutorial_lesson_chains.txt
+..\checksum_manifest.txt
+..\credits.txt
+..\common\character_templates\historical_commanders_africa.txt
+..\common\coat_of_arms\coat_of_arms\02_countries_usa.txt
+..\common\coat_of_arms\coat_of_arms\01_subs.txt
+..\common\coat_of_arms\coat_of_arms\03_random_fascist.txt
+..\common\coat_of_arms\coat_of_arms\03_random.txt
+..\common\coat_of_arms\coat_of_arms\03_random_communist.txt
+..\common\country_definitions\00_countries.txt
+..\common\cultures\00_additional_cultures.txt
+..\common\coat_of_arms\coat_of_arms\01_subs_usa.txt
+..\common\decisions\000_decisions_help.txt
+..\common\coat_of_arms\coat_of_arms\02_countries.txt
+..\common\cultures\00_cultures.txt
+..\common\defines\00_defines.txt
+..\common\defines\00_graphics.txt
+..\common\dna_data\00_dna.txt
+..\common\ethnicities\01_ethnicities_arab.txt
+..\common\effect_localization\00_strategic_region_effects_loc.txt
+..\common\ethnicities\01_ethnicities_central_african.txt
+..\common\ethnicities\01_ethnicities_central_asian.txt
+..\common\ethnicities\00_ethnicities_templates.txt
+..\common\ethnicities\01_ethnicities_east_african.txt
+..\common\ethnicities\01_ethnicities_native_american.txt
+..\common\ethnicities\01_ethnicities_asian.txt
+..\common\ethnicities\01_ethnicities_default_morphs.txt
+..\common\ethnicities\01_ethnicities_african.txt
+..\common\ethnicities\01_ethnicities_slavic.txt
+..\common\flag_definitions\01_flag_definitions_usa.txt
+..\common\ethnicities\01_ethnicities_south_east_asian.txt
+..\common\ethnicities\01_ethnicities_north_caucasian.txt
+..\common\ethnicities\01_ethnicities_south_american.txt
+..\common\ethnicities\01_ethnicities_indian.txt
+..\common\ethnicities\01_ethnicities_polynesian.txt
+..\common\ethnicities\01_ethnicities_debug.txt
+..\common\ethnicities\01_ethnicities_neutral.txt
+..\common\flag_definitions\00_flag_definitions.txt
+..\common\ethnicities\01_ethnicities_circumpolar.txt
+..\common\genes\01_genes_morph.txt
+..\common\interest_groups\00_rural_folk.txt
+..\common\interest_groups\00_landowners.txt
+..\common\interest_groups\00_devout.txt
+..\common\interest_groups\00_industrialists.txt
+..\common\interest_groups\00_petty_bourgeoisie.txt
+..\common\interest_groups\00_armed_forces.txt
+..\common\interest_groups\00_intelligentsia.txt
+..\common\interest_groups\00_trade_unions.txt
+..\common\journal_entries\00_player_objectives_economic_dominance.txt
+..\common\named_colors\00_country_colors.txt
+..\common\parties\agrarian_party.txt
+..\common\named_colors\00_coa_colors.txt
+..\common\parties\communist_party.txt
+..\common\parties\free_trade_party.txt
+..\common\pop_types\academics.txt
+..\common\parties\fascist_party.txt
+..\common\pop_types\laborers.txt
+..\common\parties\conservative_party.txt
+..\common\parties\religious_party.txt
+..\common\pop_types\bureaucrats.txt
+..\common\pop_types\clergymen.txt
+..\common\pop_types\capitalists.txt
+..\common\parties\anarchist_party.txt
+..\common\pop_types\clerks.txt
+..\common\pop_types\shopkeepers.txt
+..\common\pop_types\peasants.txt
+..\common\pop_types\soldiers.txt
+..\common\pop_types\aristocrats.txt
+..\common\parties\radical_party.txt
+..\common\parties\liberal_party.txt
+..\common\pop_types\machinists.txt
+..\common\pop_types\officers.txt
+..\common\pop_types\farmers.txt
+..\common\parties\military_party.txt
+..\common\pop_types\engineers.txt
+..\common\pop_types\slaves.txt
+..\common\on_actions\00_code_on_actions.txt
+..\common\parties\social_democrats_party.txt
+..\common\scripted_effects\00_rufus_scripted_effects.txt
+..\common\scripted_effects\00_scripted_effects.txt
+..\common\script_values\building_values.txt
+..\common\scripted_lists\dummy.txt
+..\common\scripted_guis\dummy.txt
+..\common\terrain\01_terrain.txt
+..\common\tutorial_lessons\00_tutorial_lessons_buildings.txt
+..\common\script_values\game_values.txt
+..\common\tutorial_lessons\00_tutorial_lessons_establish_trade_route.txt
+..\common\tutorial_lessons\00_tutorial_lessons_institution_by_law.txt
+..\content_source\map_objects\generators\bush_02_generator.txt
+..\content_source\map_objects\generators\baobab_01_generator.txt
+..\common\tutorial_lesson_chains\00_tutorial_lesson_chains.txt
+..\content_source\map_objects\generators\cypress_mediterranean_dense_01.txt
+..\content_source\map_objects\generators\bush_01_generator.txt
+..\content_source\map_objects\generators\cypress_mediterranean_sparse_01.txt
+..\content_source\map_objects\generators\cypress_01_dense_generator.txt
+..\content_source\map_objects\generators\bush_dry_02_generator.txt
+..\content_source\map_objects\generators\pine_generator.txt
+..\content_source\map_objects\generators\rainforest_01_sparse_generator.txt
+..\content_source\map_objects\generators\palm_dense_generator.txt
+..\content_source\map_objects\generators\savanna_tree_01_generator.txt
+..\content_source\map_objects\generators\oak_tree_generator.txt
+..\content_source\map_objects\generators\pine_sparse_generator.txt
+..\content_source\map_objects\generators\oak_dense_generator.txt
+..\content_source\map_objects\generators\rainforest_01_generator.txt
+..\events\misc_regional_events.txt
+..\events\test_events.txt
+..\fonts\EBGaramond\OFL.txt
+..\fonts\NotoSerif\OFL.txt
+..\fonts\ParadoxVictorian\license.txt
+..\fonts\MaruBuri\license.txt
+..\gfx\map\borders\front_graphics\00_example.txt
+..\fonts\GunglipbakmulgwanClassicM\LICENSE.txt
+..\fonts\SawarabiMincho\OFL.txt
+..\fonts\NotoSans\OFL.txt
+..\fonts\PlayfairDisplay\OFL.txt
+..\gfx\map\air_graphics\00_example.txt
+..\fonts\ZenOldMincho\OFL.txt
+..\gfx\map\city_data\city_vfx\00_example.txt
+..\gfx\map\environment\environment.txt
+..\gfx\map\environment\environment_accurate.txt
+..\gfx\map\environment\ui_flag_environment.txt
+..\gfx\map\environment\environment_greyscale.txt
+..\gfx\map\city_data\city_types\00_example.txt
+..\gfx\map\map_object_data\layers.txt
+..\gfx\map\gradient_border_settings\gradient_border_settings.txt
+..\gfx\map\map_modes\map_modes.txt
+..\gfx\map\environment\environment_backsun.txt
+..\gfx\map\naval_graphics\00_example.txt
+..\gfx\map\post_effects\posteffect_volumes.txt
+..\gfx\map\spline_network\spline_styles\00_default.txt
+..\gfx\models\utility\README.txt
+..\gfx\models\papermap\set-up_info.txt
+..\gfx\portraits\jomini_environment.txt
+..\gfx\models\zzz_clones\info.txt
+..\gfx\portraits\accessory_variations\example.txt
+..\gfx\portraits\cameras\portrait_cameras.txt
+..\gfx\portraits\environments\portrait_environments.txt
+..\licenses\fonts\fonts.txt
+..\licenses\software\CEF.txt
+..\licenses\software\cJSON.txt
+..\licenses\software\breakpad.txt
+..\licenses\software\FreeImage.txt
+..\licenses\software\Fixed Point.txt
+..\licenses\software\GLEW.txt
+..\licenses\software\cURL.txt
+..\licenses\software\SPIRV-Cross.txt
+..\licenses\software\physfs.txt
+..\licenses\software\SDL.txt
+..\licenses\software\FTL.txt
+..\licenses\software\DirectX Shader Compiler.txt
+..\licenses\software\VMA.txt
+..\licenses\software\zlib.txt
+..\notifications\game.txt
+..\sound\audio_settings.txt
+..\sound\map\ambience\map_object_visibility_settings.txt
+..\map_data\province_terrains.txt

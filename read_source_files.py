@@ -158,6 +158,3 @@ def parse_text_file(file_path):
     dictionary_from_file = _parse_data(data_stack=ds)
 
     return dictionary_from_file
-
-
-dicts = parse_text_file('D:\Games\SteamLibrary\steamapps\common\ImperatorRome\game\setup\main\\00_default.txt')
