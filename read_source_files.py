@@ -38,6 +38,9 @@ def _parse_pop(data_stack):
         if re.match(r'}', next_pop):
             return popped, 'value'
 
+        if re.match(r'{', next_pop):
+            return popped, 'key'
+
     if re.match(r'{', popped):
         return popped, 'up'
 

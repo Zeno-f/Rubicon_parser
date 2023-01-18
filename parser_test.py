@@ -17,7 +17,7 @@ be dumped
 
 """
 
-root_dir = 'D:\\Games\\SteamLibrary\\steamapps\\common\\Victoria 3\\game\\'
+root_dir = 'D:\\Games\\SteamLibrary\\steamapps\\common\\Victoria 3\\game\\common\\'
 dump_dir = 'D:\\Games\\Modding\\Rubicon Project\\ParserDump\\'
 
 txt_file_list = glob.glob('**/*.txt',
