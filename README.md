@@ -14,7 +14,7 @@ Public function that should be called is **parse_text_file(arg)**
 
 ## Unsupported files
 
-See unsupported files.txt for all files in ..\Victoria 3\game\common\ that don't work with this parser yet.
+See unsupported files.txt for all files in ..\Victoria 3\game\ that don't work with this parser yet.
 
 Other files may be improperly parsed without causing errors. Please check if the function returns a proper dictionary.
 
