@@ -16,6 +16,8 @@ Public function that should be called is **parse_text_file(arg)**
 
 See unsupported files.txt for all files in ..\Victoria 3\game\ that don't work with this parser yet.
 
+*note: only the files in /common/ were tested against improvements made since 18-01-2023*
+
 Other files may be improperly parsed without causing errors. Please check if the function returns a proper dictionary.
 
 ## Other errors
