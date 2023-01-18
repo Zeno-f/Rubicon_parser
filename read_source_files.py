@@ -53,7 +53,10 @@ def _parse_pop(data_stack):
     if re.match(',', popped):
         return _parse_pop(data_stack)
 
-    # print(popped)
+    if re.match(r'[\w/.]*', popped):      # popped is link, most likely a value
+        return popped, 'value'
+
+    raise NotImplementedError('Popped item does not match any switches')
 
 
 def _parse_data(data_stack):
