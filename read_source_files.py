@@ -23,9 +23,17 @@ def _parse_pop(data_stack):
         popped: the popped data string paired with a keyword
         """
     popped = data_stack.popleft()
-    next_pop = data_stack[0]
 
+    try:
+        next_pop = data_stack[0]
+    except IndexError as E:
+        next_pop = 'end_of_file'
+
+    # popped is a word or (negative)number
     if re.match(r'-*\w+', popped):
+
+        if 'end_of_file' in next_pop:
+            return popped, 'value'       # the values always have the last word
 
         if re.match(r'=', next_pop):
             return popped, 'key'
