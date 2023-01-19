@@ -66,6 +66,7 @@ def _parse_data(data_stack):
     Create an empty dictionary and list of values
     Then start a loop through the data stack till it is empty. The top item is
     taken off and assigned an action.
+
     DOWN:
         Check if there are values left to add to the dictionary and return
         the current dictionary or list to the lower layer.
@@ -83,7 +84,7 @@ def _parse_data(data_stack):
     data_dict = {}
     list_of_values = []
 
-    while len(data_stack) != 1:
+    while len(data_stack) > 1:
         popped, action = _parse_pop(data_stack)
 
         if 'down' in action:

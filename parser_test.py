@@ -66,8 +66,8 @@ def parse_victoria3_test(txt_file):
         pass
     except Exception as E:
         p = Path(dump_dir + txt_file)
-        # errors.append('{0} gives error: {1}'.format(p, E))
-        errors.append('{0}'.format(p))
+        errors.append('{0} gives error: {1}'.format(p, E))
+        # errors.append('{0}'.format(p))
     finally:
         pass
 
