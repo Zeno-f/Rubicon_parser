@@ -4,6 +4,7 @@ from pathlib import Path
 import concurrent.futures
 import json
 import os
+from time import perf_counter
 
 """This test the reach of the parser
 
@@ -73,11 +74,18 @@ def parse_victoria3_test(txt_file):
 
 if __name__ == '__main__':
 
+    t1_start = perf_counter()
+
     create_dummies()
+
+    t2_start = perf_counter()
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=50) as executor:
         executor.map(parse_victoria3_test, txt_file_list)
 
+    t_stop = perf_counter()
+
     write_errors()
 
-    print('done')
+    print('done in {0}, parsing took {1}'.format(t_stop-t1_start,
+                                                 t_stop-t2_start))
