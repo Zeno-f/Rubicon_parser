@@ -6,6 +6,7 @@ Public function that should be called is parse_text_file()
     Returns: nested dictionary
 """
 import re
+from collections import deque
 
 
 def _read_file_as_string(location):
@@ -21,7 +22,7 @@ def _parse_pop(data_stack):
     Returns
         popped: the popped data string paired with a keyword
         """
-    popped = data_stack.pop(0)
+    popped = data_stack.popleft()
     next_pop = data_stack[0]
 
     if re.match(r'-*\w+', popped):
@@ -161,6 +162,8 @@ def parse_text_file(file_path):
     ds[:] = [x for x in ds if x]         # remove whitespace
     ds[:] = [x for x in ds if x != '\n']  # remove newlines
 
-    dictionary_from_file = _parse_data(data_stack=ds)
+    ds_deque = deque(ds)
+
+    dictionary_from_file = _parse_data(data_stack=ds_deque)
 
     return dictionary_from_file
