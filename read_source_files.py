@@ -175,10 +175,10 @@ def parse_text_file(file_path):
 
     ds = re.sub(r'(#.*)', '', ds)    # remove comment
     ds = re.sub(r'\b\s\b', ',', ds)  # newlines and whitespaces to list items
-    ds = re.sub(r'\b\s(-\w)', r',\1', ds)  # whitespace before neg to list
-    ds = re.sub(r'([^}]\n})\s+({)', ',', ds)  # remove redundant dictionary
-    ds = re.sub(r'\t', '', ds)        # flatten by removing tabs
+    ds = re.sub(r'\b\s(-\w)', r',\1', ds)   # whitespace before neg to list
+    ds = re.sub(r'\t', '', ds)  # flatten by removing tabs
     ds = re.sub(r'(\n)*', r'\1', ds)  # remove empty lines
+    ds = re.sub(r'([^}]\s+)}\s+{', r'\1,', ds)    # remove redundant dictionary
     ds = re.sub(r' ', '', ds)          # remove meaningless whitespace
     ds = re.sub(r'"', '', ds)           # remove ""
     ds = re.split(r'(\n|{|}|,|=)', ds)  # split
