@@ -142,7 +142,6 @@ def _parse_data(data_stack):
                 instead of a dictionary"""
 
                 if isinstance(data_dict, list):
-                    print('list')
                     data_dict.append(up_dict)
 
                 if isinstance(data_dict, dict):
