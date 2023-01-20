@@ -115,7 +115,11 @@ def _parse_data(data_stack):
             if 'last_key' in locals():
                 if popped != last_key:
                     if len(list_of_values) == 1:
-                        data_dict.update({last_key: list_of_values.pop()})
+                        if last_key in data_dict.keys():
+                            data_dict[last_key] = '{0}, {1}'.format(
+                                data_dict[last_key], list_of_values.pop())
+                        else:
+                            data_dict.update({last_key: list_of_values.pop()})
                     if len(list_of_values) > 1:
                         data_dict.update({last_key: []})
                         for i in list_of_values:
