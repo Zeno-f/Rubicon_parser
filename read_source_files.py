@@ -140,7 +140,17 @@ def _parse_data(data_stack):
             else:
                 """Dictionary does not have a key, and it might be a list 
                 instead of a dictionary"""
-                data_dict = up_dict
+
+                if isinstance(data_dict, list):
+                    print('list')
+                    data_dict.append(up_dict)
+
+                if isinstance(data_dict, dict):
+                    if len(data_dict) > 1:
+                        merge_dict = [data_dict, up_dict]
+                        data_dict = merge_dict
+                    if len(data_dict) == 0:
+                        data_dict = up_dict
 
     return data_dict
 
@@ -167,7 +177,7 @@ def parse_text_file(file_path):
     ds = re.sub(r'\t', '', ds)        # flatten by removing tabs
     ds = re.sub(r'(\n)*', r'\1', ds)  # remove empty lines
     ds = re.sub(r' ', '', ds)          # remove meaningless whitespace
-    ds = re.sub(r'"', '', ds)
+    ds = re.sub(r'"', '', ds)           # remove ""
     ds = re.split(r'(\n|{|}|,|=)', ds)  # split
     ds[:] = [x for x in ds if x]         # remove whitespace
     ds[:] = [x for x in ds if x != '\n']  # remove newlines
