@@ -116,6 +116,8 @@ def _parse_data(data_stack):
                 if popped != last_key:
                     if len(list_of_values) == 1:
                         if last_key in data_dict.keys():
+                            """This key already contains data, create list
+                            with the old and new data"""
                             data_dict[last_key] = '{0}, {1}'.format(
                                 data_dict[last_key], list_of_values.pop())
                         else:
@@ -143,7 +145,12 @@ def _parse_data(data_stack):
                     data_dict.update({last_key: up_dict})
             else:
                 """Dictionary does not have a key, and it might be a list 
-                instead of a dictionary"""
+                instead of a dictionary
+                
+                Data from UP is written to the dictionary.
+                If there is already data in the dictionary the data is
+                converted or appended to a list of UP dictionaries
+                """
 
                 if isinstance(data_dict, list):
                     data_dict.append(up_dict)
