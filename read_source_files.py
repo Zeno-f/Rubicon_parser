@@ -115,7 +115,13 @@ def _parse_data(data_stack):
             if 'last_key' in locals():
                 if popped != last_key:
                     if len(list_of_values) == 1:
-                        data_dict.update({last_key: list_of_values.pop()})
+                        if last_key in data_dict.keys():
+                            """This key already contains data, create list
+                            with the old and new data"""
+                            data_dict[last_key] = '{0}, {1}'.format(
+                                data_dict[last_key], list_of_values.pop())
+                        else:
+                            data_dict.update({last_key: list_of_values.pop()})
                     if len(list_of_values) > 1:
                         data_dict.update({last_key: []})
                         for i in list_of_values:
@@ -139,8 +145,22 @@ def _parse_data(data_stack):
                     data_dict.update({last_key: up_dict})
             else:
                 """Dictionary does not have a key, and it might be a list 
-                instead of a dictionary"""
-                data_dict = up_dict
+                instead of a dictionary
+                
+                Data from UP is written to the dictionary.
+                If there is already data in the dictionary the data is
+                converted or appended to a list of UP dictionaries
+                """
+
+                if isinstance(data_dict, list):
+                    data_dict.append(up_dict)
+
+                if isinstance(data_dict, dict):
+                    if len(data_dict) > 1:
+                        merge_dict = [data_dict, up_dict]
+                        data_dict = merge_dict
+                    if len(data_dict) == 0:
+                        data_dict = up_dict
 
     return data_dict
 
@@ -162,12 +182,12 @@ def parse_text_file(file_path):
 
     ds = re.sub(r'(#.*)', '', ds)    # remove comment
     ds = re.sub(r'\b\s\b', ',', ds)  # newlines and whitespaces to list items
-    ds = re.sub(r'\b\s(-\w)', r',\1', ds)  # whitespace before neg to list
-    ds = re.sub(r'([^}]\n})\s+({)', ',', ds)  # remove redundant dictionary
-    ds = re.sub(r'\t', '', ds)        # flatten by removing tabs
+    ds = re.sub(r'\b\s(-\w)', r',\1', ds)   # whitespace before neg to list
+    ds = re.sub(r'\t', '', ds)  # flatten by removing tabs
     ds = re.sub(r'(\n)*', r'\1', ds)  # remove empty lines
+    ds = re.sub(r'([^}]\s+)}\s+{', r'\1,', ds)    # remove redundant dictionary
     ds = re.sub(r' ', '', ds)          # remove meaningless whitespace
-    ds = re.sub(r'"', '', ds)
+    ds = re.sub(r'"', '', ds)           # remove ""
     ds = re.split(r'(\n|{|}|,|=)', ds)  # split
     ds[:] = [x for x in ds if x]         # remove whitespace
     ds[:] = [x for x in ds if x != '\n']  # remove newlines
